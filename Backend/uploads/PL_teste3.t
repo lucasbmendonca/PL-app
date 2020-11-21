@@ -8,6 +8,6 @@ ok 2
         ok 2 - and another subtest 2
         1..2
     ok 2 - Some subtests second
-    ok 3 - some more subtests
+    not ok 3 - some more subtests
     1..3
-ok 3 - Some subtests first
+not ok 3 - Some subtests first
