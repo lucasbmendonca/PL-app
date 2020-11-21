@@ -1,32 +1,33 @@
-import json
-from treelib import Node, Tree
 from TAPParser import TAPLexer
-from utils import slurp
-import ply.lex as lex
+from treelib import Node, Tree
+import json
+from globalstats import GlobalStats
+from filesinfo import FileInfo
 import sys
 
-recebido = sys.argv[1].split(',')
+#Files
+recebidos = sys.argv[1].split(',')
 
-aEnviar = []
+#Lexer
+lex = TAPLexer()
+lex.build()
 
-tamanho = len(recebido)
+#File global and individual info
+globalStats = GlobalStats() 
+globalStats.LoadFile("globalstats.json")
 
-for nome in recebido:
-    a = TAPLexer()
-    a.build()
-    a.inputFile("./inputs/" + nome)
-    a.execute()
-    data = a.tree_manager.mainTree.to_json()
-    aEnviar.append(nome + ' ' + data)
+fileInfo = FileInfo()
 
-print(aEnviar)
+for nome in recebidos:
+    fullPath = "./inputs/" + nome
+    lex.inputFile(fullPath)
+    lex.execute()
+    globalStats.UpdateStats(lex)
+    fileInfo.UpdateFileInfo(globalStats, fullPath, lex)
+    fileInfo.SaveToJSON("fileInfo.json")
+    globalStats = globalStats.SaveToFile("globalstats.json")
+
+print(globalStats.__dict__)
+    
 
 
-# print(a.tree_manager.mainTree.show())
-
-data = a.tree_manager.mainTree.to_json()
-# print(data)
-
-# with open('./data.json', 'w') as outfile:
-#     outfile.write(data)
-#     outfile.close()
