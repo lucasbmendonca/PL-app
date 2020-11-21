@@ -11,24 +11,31 @@ import { MatIconModule} from '@angular/material/icon';
 import {  MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {  MatProgressBarModule } from '@angular/material/progress-bar';
-import { HistoricoTestesComponent } from './componentes/historico-testes/historico-testes.component';
+import { EstatisticasComponent } from './componentes/estatisticas/estatisticas.component';
+import { TodosOsTestesComponent } from './componentes/todos-os-testes/todos-os-testes.component';
+import { ResultadoTestesComponent } from './componentes/resultado-testes/resultado-testes.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelecionarFicheirosComponent,
-    HistoricoTestesComponent
+    EstatisticasComponent,
+    TodosOsTestesComponent,
+    ResultadoTestesComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,  
-    MatIconModule,  
-    MatButtonModule,  
-    MatCardModule,  
-    MatProgressBarModule  
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

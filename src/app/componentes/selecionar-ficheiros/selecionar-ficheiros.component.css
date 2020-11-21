@@ -1,16 +1,18 @@
+.PlanoFundo {
+  width: 100%;
+  height: 95%;
+  background-color: rgb(255, 255, 255);
+}
+
 .fundo {
   background-color: black;
-  border: 1px solid black;
-  border-radius: 12px 12px 12px 12px;
   position: absolute;
-  padding: 10px 10px 10px 10px;
-
-  width: calc(100% - 676px);
-  height: calc(100% - 401px);
-  top: 80px;
-  left: 351px;
-  min-width: 352px;
-  min-height: 373px;
+  border: 2px solid white;
+  border-radius: 12px;
+  left: calc(50% - 400px);
+  top: 90px;
+  width: 800px;
+  height: 600px;
 }
 
 .listaficheiros {

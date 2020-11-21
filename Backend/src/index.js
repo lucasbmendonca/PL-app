@@ -6,8 +6,6 @@ const spawn = require('child_process').spawn;
 
 
 
-let avancar = 0;
-
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -77,6 +75,7 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
 
       process.stdout.on('data', data => {
         console.log(data.toString());
+        res.send(JSON.stringify(data));
 
 
       });
@@ -84,7 +83,7 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
 
 
 
-  res.send(files);
+
 })
 
 

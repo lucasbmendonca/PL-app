@@ -1,0 +1,92 @@
+.PlanoFundo {
+  width: 100%;
+  height: 95%;
+  background-color: rgb(255, 255, 255);
+}
+
+.moldura {
+  background-color: black;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 12px;
+  left: calc(50% - 400px);
+  top: 30px;
+  width: 800px;
+  height: 600px;
+}
+
+.divInfo {
+  position: absolute;
+  left: 24px;
+  width: 750px;
+  height: 500px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.totalFich {
+  position: absolute;
+  left: 24px;
+  top: 30px;
+  width: 700px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.testes {
+  position: absolute;
+  left: 24px;
+  top: 100px;
+  width: 345px;
+  height: 300px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.subtestes {
+  position: absolute;
+  left: 380px;
+  top: 100px;
+  width: 345px;
+  height: 300px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.cabecalhoTestes {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 320px;
+  height: 70px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.testesOK {
+  position: absolute;
+  left: 10px;
+  top: 90px;
+  width: 155px;
+  height: 90px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.testesNOK {
+  position: absolute;
+  left: 175px;
+  top: 90px;
+  width: 155px;
+  height: 90px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}

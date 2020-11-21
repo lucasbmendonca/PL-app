@@ -34,7 +34,11 @@ export class SelecionarFicheirosComponent implements OnInit {
   onUpload(){
     if(this.files && this.files.size > 0){
       this.service.upload(this.files, 'http://localhost:8000/uploads')
-        .subscribe(res => console.log('Upload concluido'))
+        .subscribe(res => {
+          const obj = JSON.parse(res[0]);
+          console.log(obj)
+
+        })
 
     }
   }
