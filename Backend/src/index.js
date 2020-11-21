@@ -81,10 +81,12 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
 
 
 
-
-
 })
 
+app.get("/hist-Tests", (req, res , next) => {
+  console.log('../fileInfo.json')
+  res.send('../fileInfo.json')
+})
 
 app.use((err,req, res, next) => res.json({error: err.message}));
 

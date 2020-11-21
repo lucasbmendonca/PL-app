@@ -108,3 +108,11 @@ class TAPLexer:
         _dateTime = datetime.today().strftime('%Y-%m-%d-%H_%M_%S')
         with open(self.relativePath + '\\treefiles\\' + _dateTime + name + ".json",'w') as outfile:
             outfile.write(data)
+    
+    def clearResults(self):
+        self.n_tests = 0
+        self.n_ok_tests = 0
+        self.n_nok_tests = 0
+        self.n_subtests = 0
+        self.n_ok_subtests = 0
+        self.n_nok_subtests = 0

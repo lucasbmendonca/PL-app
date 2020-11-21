@@ -9,6 +9,7 @@ import os
 relativePath = os.path.dirname(os.path.abspath(__file__))
 
 #Files
+#received = ["teste1.t", "teste2.t", "teste3.t", "teste4.t", "teste5.t", "teste6.t", "teste7.t"]
 received = sys.argv[1].split(',')
 
 #Lexer
@@ -28,6 +29,7 @@ for name in received:
     globalStats.UpdateStats(lex)
     fileInfo.UpdateFileInfo(globalStats, fullPath, lex)
     fileInfo.SaveToJSON(relativePath + "\\fileInfo.json")
-    globalStats.SaveToFile(relativePath + "\\globalstats.json")
+    globalStats = globalStats.SaveToFile(relativePath + "\\globalstats.json")
+    lex.clearResults()
 
 print(globalStats.__dict__)
