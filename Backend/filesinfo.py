@@ -38,13 +38,13 @@ class FileInfo:
         "dateTime" attribute's value is equal to the local machine date and time
         '''
         
-        self.id = globalStats.filesNo
+        self.id = globalStats.totalFiles
         self.name = os.path.basename(filePath)
         self.dateTime = time.asctime()
         self.ok_tests = lexObj.n_ok_tests
         self.nok_tests = lexObj.n_nok_tests
         self.ok_subtests = lexObj.n_ok_subtests
-        self.nok_subtests = lexObj.n_nok_substests
+        self.nok_subtests = lexObj.n_nok_subtests
 
     def SaveToJSON(self, filePath):
         '''

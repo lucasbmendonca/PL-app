@@ -75,7 +75,6 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
 
       process.stdout.on('data', data => {
         console.log(data.toString());
-        res.send(JSON.stringify(data));
 
 
       });

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Grid</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@araujoigor/json-grid/dist/json-grid.css">
+    <script src="https://unpkg.com/@araujoigor/json-grid/dist/JSONGrid.min.js"></script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        function readTextFile(file, callback) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("application/json");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        var container = document.getElementById("container");
+
+        readTextFile("model/data.json", function (text) {
+            data = JSON.parse(text);
+            console.log(data);
+            var jsonGrid = new JSONGrid(data, container);
+            jsonGrid.render();
+        });
+    </script>
+</body>
+
+</html>

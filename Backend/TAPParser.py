@@ -2,8 +2,8 @@ import	ply.lex as lex
 from TreeManagement import TreeManagement
 from treelib import Node, Tree
 from utils import slurp, GetTreeLevel
-
-
+from datetime import datetime
+import os
 
 class TAPLexer:
     '''
@@ -20,7 +20,8 @@ class TAPLexer:
     '''
 
     def __init__(self):
-        self.tree_manager = TreeManagement()
+        self.relativePath = os.path.dirname(os.path.abspath(__file__))
+        self.tree_manager = None
         self.n_tests = 0
         self.n_ok_tests = 0
         self.n_nok_tests = 0
@@ -96,6 +97,14 @@ class TAPLexer:
     def inputFile(self, filePath):
         self.lexer.input(slurp(filePath))
 
-    def execute(self):
+    def execute(self,name):
+        self.tree_manager = TreeManagement()
         for token in iter(self.lexer.token, None):
             print(token)
+        self.saveTreeToJson(name)
+    
+    def saveTreeToJson(self, name):
+        data = self.tree_manager.mainTree.to_json()
+        _dateTime = datetime.today().strftime('%Y-%m-%d-%H_%M_%S')
+        with open(self.relativePath + '\\treefiles\\' + _dateTime + name + ".json",'w') as outfile:
+            outfile.write(data)

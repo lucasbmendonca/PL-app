@@ -67,4 +67,4 @@ class GlobalStats():
         jsonified_object = self.__dict__
         with open(filePath, 'w') as output:
             json.dump(jsonified_object, output)
-        return LoadFile(self,filePath)
+        return self
